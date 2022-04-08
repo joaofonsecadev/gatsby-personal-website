@@ -14,7 +14,27 @@ $navbarHeight: 60px;
 $footerHeight: 28px;
 $headerHeight: 35px;
 
-* {
+::marker {
+    color: $accent;
+}
+
+::selection {
+    background: $accent;
+    color: $fontTextBrightInvert;
+}
+
+::-webkit-scrollbar {
+    background: $backgroundNavbar;
+    height: 8px;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #464e5f;
+    border-radius: 0;
+}
+
+*, :after, :before {
     box-sizing: border-box;
 }
 
@@ -25,12 +45,12 @@ body {
     color: $fontText;
     font-size: 1rem;
     line-height: 1.65;
+    margin: 0;
 }
 
 main {
     background: $background;
     margin-top: $navbarHeight;
-    min-height: calc(100vh - 215px);
 }
 
 h1 {
@@ -407,20 +427,27 @@ strong {
     }
 }
 
+.desktop-only { 
+    display: block!important;
+}
+
 .footer {
-    height: $footerHeight;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: $backgroundTabs;
+    background: $backgroundNavbar;
+    border-top: 1px solid $borderLight;
+    font-family: $fontPost;
+    padding: 3rem 0;
 
     section {
-        align-items: stretch;
+        align-items: center;
         display: flex;
-        height: 100%;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    img {
+        display: inline-block;
+        max-height: 20px;
+        width: auto;
     }
 
     nav {
@@ -429,11 +456,23 @@ strong {
         margin: 0 1rem;
     }
 
-    span {
-        color: white;
+    a, span {
         align-items: center;
-        font-size: .8rem;
-        line-height: $footerHeight;
-        padding: 0 .5rem;
+        color: $fontTextDark;
+        display: flex;
+        font-size: .9rem;
+        line-height: 1.2;
+        padding: 0 0.5rem;
     }
+
+    span {
+        color: $fontTextBright;
+    }
+}
+
+.main-footer {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
 }

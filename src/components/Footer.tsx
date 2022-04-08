@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="footer">
       <section>
         <nav>
-          <span>© João Fonseca</span>
+          <span className="desktop-only">© João Fonseca</span>
         </nav>
       </section>
     </footer>

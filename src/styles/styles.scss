@@ -128,6 +128,18 @@ a {
             text-align: center;
         }
 
+        &.new {
+            time {
+                color: $accent!important;
+            }
+        }
+
+        &.new .new-badge {
+            color: $accent;
+            margin-left: 0.75rem;
+            font-family: $fontPost;
+        }
+
         &:hover {
             background: #00000033;
             border: 1px solid transparent;

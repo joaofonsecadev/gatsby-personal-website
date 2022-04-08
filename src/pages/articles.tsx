@@ -1,8 +1,15 @@
-import React from 'react';
+import { graphql } from 'gatsby';
+import React, { useMemo } from 'react';
 import Helmet from 'react-helmet';
+import Search from '../components/Search';
 import SiteConfig from '../utils/config';
+import { getSimplifiedPosts } from '../utils/helpers';
 
-export default function Articles() {
+export default function Articles({ data }) {
+  const posts = data.allMarkdownRemark.edges;
+  const simplePosts = useMemo(() => getSimplifiedPosts(posts), [posts]);
+  console.log(simplePosts);
+
   return (
     <>
       <Helmet title={`Articles - ${SiteConfig.title}`} />
@@ -17,9 +24,29 @@ export default function Articles() {
           </div>
         </header>
         <section>
-          <div className="container" />
+          <div className="container">
+            <Search data={simplePosts} showYears />
+          </div>
         </section>
       </article>
     </>
   );
 }
+
+export const pageQuery = graphql`
+  query BlogQuery {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          id
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            tags
+            slug
+          }
+        }
+      }
+    }
+  }
+`;

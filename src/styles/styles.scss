@@ -63,6 +63,10 @@ blockquote, ol, p, table, ul {
 a {
     text-decoration: none;
 
+    &:focus-visible {
+        outline: 3px solid $accent;
+    }
+
     &.button {
         background: $accent;
         border: 1px solid $accent!important;
@@ -115,6 +119,10 @@ a {
             }
         }
     }
+}
+
+button:focus-visible {
+    outline: 3px solid $accent;
 }
 
 article {
@@ -198,6 +206,14 @@ strong {
     top: 0;
     width: 100%;
     z-index: 9;
+
+    button:focus {
+        outline: none;
+    }
+
+    button:focus-visible {
+        outline: 3px solid $accent;
+    }
 
     nav {
         align-items: center;
@@ -343,6 +359,51 @@ strong {
 
     a {
         font-size: 1rem;
+    }
+}
+
+.search-bar {
+    grid-gap: 1rem;
+    align-items: center;
+    display: grid;
+    grid-template-columns: auto 50px;
+}
+
+.search-input {
+    -webkit-appearance: none;
+    background: $inputBackground;
+    border: 1px solid $borderLight;
+    border-radius: 8px;
+    color: $fontTextBright;
+    font-size: 1.1rem;
+    line-height: 1.1;
+    padding: 0.75rem 1rem;
+    width: 100%;
+
+    &:focus {
+        outline: none;
+        box-shadow: 1px 1px 1px $accent;
+        filter: brightness(1.1);
+    }
+
+    &:active, &:focus, &:hover {
+        border-color: $accent;
+    }
+}
+
+.highlighted {
+    background: $accent;
+    color: $fontTextBrightInvert;
+}
+
+.search-icon {
+    max-width: 30px;
+}
+
+.blog-page {
+    h2 {
+        border-bottom: 1px solid $borderLight;
+        margin-top: 2.5rem;
     }
 }
 

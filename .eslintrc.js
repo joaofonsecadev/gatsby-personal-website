@@ -11,6 +11,7 @@ module.exports = {
     'object-curly-newline' : 'warn',
     'import/prefer-default-export' : 'warn',
     'limited-exports-page-templates': 'warn',
+    'no-nested-ternary': 'warn',
     'react/function-component-definition': 'off',
     'react/prop-types': 'warn',
     'react/jsx-one-expression-per-line': 'off',

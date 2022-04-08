@@ -57,7 +57,11 @@ export default function WebIndex({ data }) {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    latest: allMarkdownRemark(limit: 7, sort: { fields: [frontmatter___date], order: DESC }) {
+    latest: allMarkdownRemark(
+      limit: 7
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { public: { eq: "true" } } }
+    ) {
       edges {
         node {
           id

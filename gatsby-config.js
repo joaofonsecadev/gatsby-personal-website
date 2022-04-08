@@ -48,12 +48,17 @@ module.exports = {
         },
         query: `
           {
-            allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+            allMarkdownRemark(
+              sort: { fields: [frontmatter___date], order: DESC }
+              filter: {frontmatter: {public: {eq: "true"}}}
+            ) {
               nodes {
                 id
                 frontmatter {
                   title
                   tags
+                  hiddenTags
+                  categories
                   slug
                   date(formatString: "MMMM DD, YYYY")
                 }
@@ -63,8 +68,8 @@ module.exports = {
           }
         `,
         ref: 'id',
-        index: ['title', 'tags'],
-        store: ['id', 'slug', 'title', 'tags', 'date'],
+        index: ['title', 'tags', 'hiddenTags', 'categories'],
+        store: ['id', 'slug', 'title', 'tags', 'date', 'hiddenTags', 'categories'],
         normalizer: ({ data }) =>
           data.allMarkdownRemark.nodes.map((node) => ({
             id: node.id,
@@ -73,6 +78,8 @@ module.exports = {
             body: node.rawMarkdownBody,
             tags: node.frontmatter.tags,
             date: node.frontmatter.date,
+            hiddenTags: node.frontmatter.hiddenTags,
+            categories: node.frontmatter.categories
         })),
       },
     },

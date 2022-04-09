@@ -1,11 +1,11 @@
-import React, { useMemo } from 'react';
-import { Link, graphql } from 'gatsby';
-import Helmet from 'react-helmet';
-import SEO from '../components/SEO';
-import SiteConfig from '../utils/config';
-import profilePicture from '../assets/pfp.jpg';
-import { getSimplifiedPosts } from '../utils/helpers';
-import PostList from '../components/PostList';
+import React, { useMemo } from "react";
+import { Link, graphql } from "gatsby";
+import Helmet from "react-helmet";
+import SEO from "../components/SEO";
+import SiteConfig from "../utils/config";
+import profilePicture from "../assets/pfp.jpg";
+import { getSimplifiedPosts } from "../utils/helpers";
+import PostList from "../components/PostList";
 
 export default function WebIndex({ data }) {
   const latest = data.latest.edges;
@@ -22,8 +22,8 @@ export default function WebIndex({ data }) {
               <div>
                 <h1>Hey, I&apos;m João.</h1>
                 <p className="subtitle small">
-                  I&apos;m a game developer from Lisbon, Portugal. Currently working as an
-                  Automation Test Engineer at Funcom, for the{' '}
+                  I&apos;m a game developer from Lisbon, Portugal. Currently
+                  working as an Automation Test Engineer at Funcom, for the{" "}
                   <a
                     href="https://pr.funcom.com/Unannounced-Dune-survival-game"
                     target="_blank"

@@ -1,9 +1,9 @@
-import { graphql } from 'gatsby';
-import React, { useMemo } from 'react';
-import Helmet from 'react-helmet';
-import Search from '../components/Search';
-import SiteConfig from '../utils/config';
-import { getSimplifiedPosts } from '../utils/helpers';
+import { graphql } from "gatsby";
+import React, { useMemo } from "react";
+import Helmet from "react-helmet";
+import Search from "../components/Search";
+import SiteConfig from "../utils/config";
+import { getSimplifiedPosts } from "../utils/helpers";
 
 export default function Articles({ data }) {
   const posts = data.allMarkdownRemark.edges;
@@ -18,8 +18,8 @@ export default function Articles({ data }) {
           <div className="container">
             <h1>Articles</h1>
             <p className="description">
-              Whatever I feel like writting. You may find tutorials, technical analysis, reviews of
-              various types of content, etc.
+              Whatever I feel like writting. You may find tutorials, technical
+              analysis, reviews of various types of content, etc.
             </p>
           </div>
         </header>

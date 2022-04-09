@@ -1,20 +1,30 @@
-import React, { useMemo } from 'react';
+import React, { useMemo } from "react";
 
-import Post from './Post';
+import Post from "./Post";
 
-export default function PostList({ data = [], showYears, query, prefix, hideDate, yearOnly }) {
+export default function PostList({
+  data = [],
+  showYears,
+  query,
+  prefix,
+  hideDate,
+  yearOnly,
+}) {
   const postsByYear = useMemo(() => {
     const collection = {};
 
     data.forEach((post) => {
-      const year = post.date?.split(', ')[1];
+      const year = post.date?.split(", ")[1];
 
       collection[year] = [...(collection[year] || []), post];
     });
 
     return collection;
   }, [data]);
-  const years = useMemo(() => Object.keys(postsByYear).reverse(), [postsByYear]);
+  const years = useMemo(
+    () => Object.keys(postsByYear).reverse(),
+    [postsByYear]
+  );
 
   if (showYears) {
     return years.map((year) => (

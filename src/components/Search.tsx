@@ -1,26 +1,30 @@
-import React, { useState, useRef } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import { useFlexSearch } from 'react-use-flexsearch';
-import * as queryString from 'query-string';
-import { useLocation /* , navigate */ } from '@reach/router';
-import searchIcon from '../assets/openBook.png';
-import PostList from './PostList';
+import React, { useState, useRef } from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import { useFlexSearch } from "react-use-flexsearch";
+import * as queryString from "query-string";
+import { useLocation /* , navigate */ } from "@reach/router";
+import searchIcon from "../assets/openBook.png";
+import PostList from "./PostList";
 
 export default function Search({ data }) {
   const location = useLocation();
   const searchRef = useRef(null);
   const { search } = queryString.parse(location.search);
-  const [query, setQuery] = useState(search || '');
-  const { localSearchPages } = useStaticQuery(graphql`
+  const [query, setQuery] = useState(search || "");
+  const { localSearchArticles } = useStaticQuery(graphql`
     query {
-      localSearchPages {
+      localSearchArticles {
         index
         store
       }
     }
   `);
 
-  const results = useFlexSearch(query, localSearchPages.index, localSearchPages.store);
+  const results = useFlexSearch(
+    query,
+    localSearchArticles.index,
+    localSearchArticles.store
+  );
 
   return (
     <>
@@ -44,7 +48,9 @@ export default function Search({ data }) {
           results.length > 0 ? (
             <PostList data={results} showYears query={query} />
           ) : (
-            <p style={{ marginTop: '2rem' }}>Sorry, nothing matched that search.</p>
+            <p style={{ marginTop: "2rem" }}>
+              Sorry, nothing matched that search.
+            </p>
           )
         ) : (
           <PostList data={data} showYears />

@@ -1,18 +1,22 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from "react";
+import { Link } from "gatsby";
 
-import articlesIcon from '../assets/scroll.png';
-import aboutIcon from '../assets/helmet.png';
-import bookIcon from '../assets/openBook.png';
+import articlesIcon from "../assets/scroll.png";
+import aboutIcon from "../assets/helmet.png";
+import bookIcon from "../assets/openBook.png";
 
 const navMainItems = [
-  { url: '/articles', icon: articlesIcon, label: 'Articles' },
-  { url: '/about', icon: aboutIcon, label: 'About Me' },
+  { url: "/articles", icon: articlesIcon, label: "Articles" },
+  { url: "/about", icon: aboutIcon, label: "About Me" },
 ];
 
 const navSocialItems = [
-  { url: 'https://github.com/joaofonsecadev', icon: bookIcon, label: 'Github' },
-  { url: 'https://twitter.com/joaofonsecadev', icon: bookIcon, label: 'Twitter' },
+  { url: "https://github.com/joaofonsecadev", icon: bookIcon, label: "Github" },
+  {
+    url: "https://twitter.com/joaofonsecadev",
+    icon: bookIcon,
+    label: "Twitter",
+  },
 ];
 
 export default function Navbar() {
@@ -37,7 +41,12 @@ export default function Navbar() {
         <div className="toolbar-section">
           <nav className="social-nav">
             {navSocialItems.map((item) => (
-              <a href={item.url} target="_blank" rel="noreferrer" key={item.label}>
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noreferrer"
+                key={item.label}
+              >
                 <img src={item.icon} alt={item.label} />
               </a>
             ))}

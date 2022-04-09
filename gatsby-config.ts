@@ -3,27 +3,28 @@
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
+import type { GatsbyConfig } from "gatsby";
 
-const path = require('path');
-const gatsbyRequiredRules = path.join(process.cwd(), 'node_modules', 'gatsby', 'dist', 'utils', 'eslint-rules');
+const path = require("path");
+const gatsbyRequiredRules = path.join(
+  process.cwd(),
+  "node_modules",
+  "gatsby",
+  "dist",
+  "utils",
+  "eslint-rules"
+);
 
-module.exports = {
+const config: GatsbyConfig = {
   plugins: [
-    'gatsby-plugin-sass',
+    "gatsby-plugin-sass",
     {
-      resolve: 'gatsby-plugin-eslint',
+      resolve: "gatsby-plugin-eslint",
       options: {
         rulePaths: [gatsbyRequiredRules],
-        stages: ['develop'],
-        extensions: ['js', 'jsx', 'ts', 'tsx'],
-        exclude: ['node_modules', 'bower_components', '.cache', 'public'],
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `posts`,
-        path: `${__dirname}/content/`,
+        stages: ["develop"],
+        extensions: ["js", "jsx", "ts", "tsx"],
+        exclude: ["node_modules", "bower_components", ".cache", "public"],
       },
     },
     {
@@ -31,19 +32,24 @@ module.exports = {
       options: {
         footnotes: true,
         gfm: true,
-        plugins: [
-          'gatsby-remark-autolink-headers'
-        ],
+        plugins: ["gatsby-remark-autolink-headers"],
       },
     },
     {
-      resolve: 'gatsby-plugin-local-search',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'pages',
-        engine: 'flexsearch',
+        name: `articles`,
+        path: `./content/articles`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-local-search",
+      options: {
+        name: "articles",
+        engine: "flexsearch",
         engineOptions: {
-          encode: 'icase',
-          tokenize: 'forward',
+          encode: "icase",
+          tokenize: "forward",
           async: false,
         },
         query: `
@@ -67,9 +73,17 @@ module.exports = {
             }
           }
         `,
-        ref: 'id',
-        index: ['title', 'tags', 'hiddenTags', 'categories'],
-        store: ['id', 'slug', 'title', 'tags', 'date', 'hiddenTags', 'categories'],
+        ref: "id",
+        index: ["title", "tags", "hiddenTags", "categories"],
+        store: [
+          "id",
+          "slug",
+          "title",
+          "tags",
+          "date",
+          "hiddenTags",
+          "categories",
+        ],
         normalizer: ({ data }) =>
           data.allMarkdownRemark.nodes.map((node) => ({
             id: node.id,
@@ -79,9 +93,11 @@ module.exports = {
             tags: node.frontmatter.tags,
             date: node.frontmatter.date,
             hiddenTags: node.frontmatter.hiddenTags,
-            categories: node.frontmatter.categories
-        })),
+            categories: node.frontmatter.categories,
+          })),
       },
     },
   ],
 };
+
+export default config;

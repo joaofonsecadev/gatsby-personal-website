@@ -1,8 +1,5 @@
 {
-  "extends": [
-    "airbnb",
-    "airbnb-typescript"
-  ],
+  "extends": ["airbnb", "airbnb-typescript"],
   "parserOptions": { "project": ["./tsconfig.json"] },
   "settings": {
     "react": {
@@ -15,8 +12,9 @@
     "import/prefer-default-export": "warn",
     "limited-exports-page-templates": "warn",
     "no-nested-ternary": "warn",
+    "@typescript-eslint/quotes": "warn",
     "react/function-component-definition": "off",
     "react/prop-types": "warn",
-    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-one-expression-per-line": "off"
   }
 }

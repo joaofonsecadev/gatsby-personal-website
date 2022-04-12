@@ -1,4 +1,5 @@
 import type { GatsbyNode } from "gatsby";
+import { slugify } from "./src/utils/helpers";
 
 const path = require("path");
 
@@ -22,7 +23,6 @@ const createPages = async ({ graphql, actions }) => {
               frontmatter {
                 title
                 tags
-                categories
                 slug
               }
             }
@@ -47,12 +47,6 @@ const createPages = async ({ graphql, actions }) => {
       });
     }
 
-    if (article.node.frontmatter.categories) {
-      article.node.frontmatter.categories.forEach((category) => {
-        categorySet.add(category);
-      });
-    }
-
     createPage({
       path: article.node.frontmatter.slug,
       component: articlePage,
@@ -67,21 +61,10 @@ const createPages = async ({ graphql, actions }) => {
   const tagList = Array.from(tagSet);
   tagList.forEach((tag) => {
     createPage({
-      path: `/tag/${slugify(tag)}`,
+      path: `/tags/${slugify(tag)}`,
       component: tagPage,
       context: {
         tag,
-      },
-    });
-  });
-
-  const categoryList = Array.from(categorySet);
-  categoryList.forEach((category) => {
-    createPage({
-      path: `/category/${slugify(category)}`,
-      component: categoryPage,
-      context: {
-        category,
       },
     });
   });
@@ -103,11 +86,6 @@ const createNode = ({ node, actions }) => {
     }
   }
 };
-
-function slugify(inString: String) {
-  const newString = inString.replace(" ", "-");
-  return newString.toLowerCase();
-}
 
 exports.createPages = createPages;
 exports.onCreateNode = createNode;

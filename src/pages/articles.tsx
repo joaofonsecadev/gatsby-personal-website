@@ -8,7 +8,6 @@ import { getSimplifiedPosts } from "../utils/helpers";
 export default function Articles({ data }) {
   const posts = data.allMarkdownRemark.edges;
   const simplePosts = useMemo(() => getSimplifiedPosts(posts), [posts]);
-  console.log(simplePosts);
 
   return (
     <>
@@ -47,7 +46,6 @@ export const pageQuery = graphql`
             title
             tags
             slug
-            categories
           }
         }
       }

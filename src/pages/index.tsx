@@ -70,7 +70,6 @@ export const pageQuery = graphql`
             title
             tags
             slug
-            categories
           }
         }
       }

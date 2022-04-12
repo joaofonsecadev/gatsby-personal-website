@@ -64,7 +64,6 @@ const config: GatsbyConfig = {
                   title
                   tags
                   hiddenTags
-                  categories
                   slug
                   date(formatString: "MMMM DD, YYYY")
                 }
@@ -74,16 +73,8 @@ const config: GatsbyConfig = {
           }
         `,
         ref: "id",
-        index: ["title", "tags", "hiddenTags", "categories"],
-        store: [
-          "id",
-          "slug",
-          "title",
-          "tags",
-          "date",
-          "hiddenTags",
-          "categories",
-        ],
+        index: ["title", "tags", "hiddenTags"],
+        store: ["id", "slug", "title", "tags", "date", "hiddenTags"],
         normalizer: ({ data }) =>
           data.allMarkdownRemark.nodes.map((node) => ({
             id: node.id,

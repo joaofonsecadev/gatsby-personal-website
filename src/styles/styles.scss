@@ -42,6 +42,14 @@ $headerHeight: 35px;
     display: block!important;
 }
 
+.bright {
+    color: $fontTextBright;
+}
+
+.primary-underline {
+    border-bottom: 3px solid $accent;
+}
+
 body {
     -webkit-font-smoothing: antialiased;
     font-family: $fontFamily;

@@ -3,11 +3,11 @@ import React, { useMemo } from "react";
 import Helmet from "react-helmet";
 import Search from "../components/Search";
 import SiteConfig from "../utils/config";
-import { getSimplifiedPosts } from "../utils/helpers";
+import { getSimplifiedArticles } from "../utils/helpers";
 
 export default function Articles({ data }) {
   const posts = data.allMarkdownRemark.edges;
-  const simplePosts = useMemo(() => getSimplifiedPosts(posts), [posts]);
+  const simplePosts = useMemo(() => getSimplifiedArticles(posts), [posts]);
 
   return (
     <>

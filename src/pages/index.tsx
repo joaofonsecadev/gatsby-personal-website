@@ -4,12 +4,12 @@ import Helmet from "react-helmet";
 import SEO from "../components/SEO";
 import SiteConfig from "../utils/config";
 import profilePicture from "../assets/pfp.jpg";
-import { getSimplifiedPosts } from "../utils/helpers";
+import { getSimplifiedArticles } from "../utils/helpers";
 import PostList from "../components/PostList";
 
 export default function WebIndex({ data }) {
   const latest = data.latest.edges;
-  const simpleLatest = useMemo(() => getSimplifiedPosts(latest), [latest]);
+  const simpleLatest = useMemo(() => getSimplifiedArticles(latest), [latest]);
 
   return (
     <>

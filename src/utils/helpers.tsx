@@ -9,3 +9,8 @@ export function getSimplifiedPosts(posts) {
     description: post.node.frontmatter.description,
   }));
 }
+
+export function slugify(inString: String) {
+  const newString = inString.replace(" ", "-");
+  return newString.toLowerCase();
+}

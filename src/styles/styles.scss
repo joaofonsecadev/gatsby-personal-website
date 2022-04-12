@@ -38,6 +38,10 @@ $headerHeight: 35px;
     box-sizing: border-box;
 }
 
+.desktop-only { 
+    display: block!important;
+}
+
 body {
     -webkit-font-smoothing: antialiased;
     font-family: $fontFamily;
@@ -439,8 +443,43 @@ strong {
     }
 }
 
-.desktop-only { 
-    display: block!important;
+.post-details {
+    color: $fontTextDark;
+    font-family: $fontPost;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+
+    a {
+        border-bottom: none;
+    }
+}
+
+.tags {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: $fontPost;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 1.5rem 0;
+
+    a {
+        border: 1px solid $borderLight;
+        border-radius: 8px;
+        color: $fontTextBright;
+        display: inline-block;
+        font-size: .9rem;
+        font-weight: 600;
+        line-height: normal;
+        padding: 0.4rem 0.6rem;
+        vertical-align: middle;
+
+        &:hover {
+            border: 1px solid $accent;
+            background: $background;
+            color: $accent;
+        }
+    }
 }
 
 .footer {

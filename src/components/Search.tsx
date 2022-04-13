@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { useFlexSearch } from "react-use-flexsearch";
 import * as queryString from "query-string";
-import { useLocation /* , navigate */ } from "@reach/router";
+import { useLocation, navigate } from "@reach/router";
 import searchIcon from "../assets/openBook.png";
 import PostList from "./PostList";
 
@@ -23,7 +23,7 @@ export default function Search({ data }) {
   const results = useFlexSearch(
     query,
     localSearchArticles.index,
-    localSearchArticles.store
+    localSearchArticles.store,
   );
 
   return (
@@ -37,7 +37,7 @@ export default function Search({ data }) {
           placeholder="Begin typing to search..."
           value={query}
           onChange={(e) => {
-            // navigate(e.target.value ? `/articles/?search=${e.target.value}` : '');
+            navigate(e.target.value ? `/articles/?search=${e.target.value}` : '');
             setQuery(e.target.value);
           }}
         />

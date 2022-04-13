@@ -1,16 +1,13 @@
 import React, { useMemo } from "react";
 import { graphql } from "gatsby";
 import PostList from "../components/PostList";
-import { getSimplifiedArticles } from "../utils/helpers";
+import { getSimplifiedposts } from "../utils/helpers";
 
-export default function Article({ data, pageContext }) {
+export default function post({ data, pageContext }) {
   const { tag } = pageContext;
-  const articles = data.allMarkdownRemark.edges;
+  const posts = data.allMarkdownRemark.edges;
   const { totalCount } = data.allMarkdownRemark;
-  const simplifiedArticles = useMemo(
-    () => getSimplifiedArticles(articles),
-    [articles],
-  );
+  const simplifiedposts = useMemo(() => getSimplifiedposts(posts), [posts]);
 
   console.log(totalCount);
 
@@ -19,17 +16,17 @@ export default function Article({ data, pageContext }) {
       <header>
         <div className="container">
           <h1>
-            <span>Articles tagged</span>{" "}
+            <span>Posts tagged</span>{" "}
             <span className="primary-underline">{tag}</span>
           </h1>
           <p className="description">
             <span className="count bright">{totalCount}</span>
-            {totalCount === 1 ? " article found" : " articles found"}
+            {totalCount === 1 ? " post found" : " posts found"}
           </p>
         </div>
       </header>
       <section className="container">
-        <PostList data={simplifiedArticles} />
+        <PostList data={simplifiedposts} />
       </section>
     </article>
   );

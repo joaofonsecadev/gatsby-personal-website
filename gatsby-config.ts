@@ -38,14 +38,14 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `articles`,
-        path: `./content/articles`,
+        name: `posts`,
+        path: `./content/posts`,
       },
     },
     {
       resolve: "gatsby-plugin-local-search",
       options: {
-        name: "articles",
+        name: "posts",
         engine: "flexsearch",
         engineOptions: {
           encode: "icase",

@@ -3,19 +3,19 @@ import React, { useMemo } from "react";
 import Helmet from "react-helmet";
 import Search from "../components/Search";
 import SiteConfig from "../utils/config";
-import { getSimplifiedArticles } from "../utils/helpers";
+import { getSimplifiedposts } from "../utils/helpers";
 
-export default function Articles({ data }) {
+export default function Posts({ data }) {
   const posts = data.allMarkdownRemark.edges;
-  const simplePosts = useMemo(() => getSimplifiedArticles(posts), [posts]);
+  const simplePosts = useMemo(() => getSimplifiedposts(posts), [posts]);
 
   return (
     <>
-      <Helmet title={`Articles - ${SiteConfig.title}`} />
+      <Helmet title={`Posts - ${SiteConfig.title}`} />
       <article className="blog-page">
         <header>
           <div className="container">
-            <h1>Articles</h1>
+            <h1>Posts</h1>
             <p className="description">
               Whatever I feel like writting. You may find tutorials, technical
               analysis, reviews of various types of content, etc.

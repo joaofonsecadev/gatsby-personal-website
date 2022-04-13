@@ -6,7 +6,7 @@ const path = require("path");
 const createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const articlePage = path.resolve("./src/templates/article.tsx");
+  const postPage = path.resolve("./src/templates/post.tsx");
   const categoryPage = path.resolve("./src/templates/category.tsx");
   const tagPage = path.resolve("./src/templates/tag.tsx");
 
@@ -32,26 +32,26 @@ const createPages = async ({ graphql, actions }) => {
     `
   );
 
-  const articles = result.data.allMarkdownRemark.edges;
+  const posts = result.data.allMarkdownRemark.edges;
 
   const tagSet = new Set();
   const categorySet = new Set();
 
-  articles.forEach((article, i) => {
-    const prev = i === articles.length - 1 ? null : articles[i + 1].node;
-    const next = i === 0 ? null : articles[i - 1].node;
+  posts.forEach((post, i) => {
+    const prev = i === posts.length - 1 ? null : posts[i + 1].node;
+    const next = i === 0 ? null : posts[i - 1].node;
 
-    if (article.node.frontmatter.tags) {
-      article.node.frontmatter.tags.forEach((tag) => {
+    if (post.node.frontmatter.tags) {
+      post.node.frontmatter.tags.forEach((tag) => {
         tagSet.add(tag);
       });
     }
 
     createPage({
-      path: article.node.frontmatter.slug,
-      component: articlePage,
+      path: post.node.frontmatter.slug,
+      component: postPage,
       context: {
-        slug: article.node.frontmatter.slug,
+        slug: post.node.frontmatter.slug,
         prev,
         next,
       },

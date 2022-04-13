@@ -2,9 +2,9 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import { slugify } from "../utils/helpers";
 
-export default function Article({ data }) {
-  const article = data.markdownRemark;
-  const { tags, title, date } = article.frontmatter;
+export default function Post({ data }) {
+  const post = data.markdownRemark;
+  const { tags, title, date } = post.frontmatter;
   tags.sort();
 
   return (
@@ -34,16 +34,16 @@ export default function Article({ data }) {
         </div>
       </header>
       <div
-        id={article.frontmatter.slug}
+        id={post.frontmatter.slug}
         className="container post-content"
-        dangerouslySetInnerHTML={{ __html: article.html }}
+        dangerouslySetInnerHTML={{ __html: post.html }}
       />
     </article>
   );
 }
 
 export const pageQuery = graphql`
-  query ArticleBySlug($slug: String!) {
+  query postBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       excerpt

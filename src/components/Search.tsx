@@ -11,9 +11,9 @@ export default function Search({ data }) {
   const searchRef = useRef(null);
   const { search } = queryString.parse(location.search);
   const [query, setQuery] = useState(search || "");
-  const { localSearchPosts } = useStaticQuery(graphql`
+  const { localSearchArticles } = useStaticQuery(graphql`
     query {
-      localSearchPosts {
+      localSearchArticles {
         index
         store
       }
@@ -22,8 +22,8 @@ export default function Search({ data }) {
 
   const results = useFlexSearch(
     query,
-    localSearchPosts.index,
-    localSearchPosts.store
+    localSearchArticles.index,
+    localSearchArticles.store,
   );
 
   return (
@@ -37,7 +37,7 @@ export default function Search({ data }) {
           placeholder="Begin typing to search..."
           value={query}
           onChange={(e) => {
-            navigate(e.target.value ? `/posts/?search=${e.target.value}` : "");
+            navigate(e.target.value ? `/articles/?search=${e.target.value}` : '');
             setQuery(e.target.value);
           }}
         />

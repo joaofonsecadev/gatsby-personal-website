@@ -43,6 +43,13 @@ const config: GatsbyConfig = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `./content/pages`,
+      },
+    },
+    {
       resolve: "gatsby-plugin-local-search",
       options: {
         name: "articles",
@@ -56,7 +63,7 @@ const config: GatsbyConfig = {
           {
             allMarkdownRemark(
               sort: { fields: [frontmatter___date], order: DESC }
-              filter: {frontmatter: {public: {eq: "true"}}}
+              filter: { frontmatter: {public: {eq: "true"}, type: {eq: "article"} } }
             ) {
               nodes {
                 id

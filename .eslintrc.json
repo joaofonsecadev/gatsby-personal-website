@@ -9,6 +9,7 @@
   "rules": {
     "no-anonymous-exports-page-templates": "warn",
     "object-curly-newline": "warn",
+    "arrow-body-style": "warn",
     "import/prefer-default-export": "warn",
     "limited-exports-page-templates": "warn",
     "no-nested-ternary": "warn",

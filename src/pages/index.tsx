@@ -60,7 +60,9 @@ export const pageQuery = graphql`
     latest: allMarkdownRemark(
       limit: 7
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { public: { eq: "true" } } }
+      filter: {
+        frontmatter: { public: { eq: "true" }, type: { eq: "article" } }
+      }
     ) {
       edges {
         node {

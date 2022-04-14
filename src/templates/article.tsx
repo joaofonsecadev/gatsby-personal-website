@@ -44,14 +44,16 @@ export default function Article({ data }) {
 
 export const pageQuery = graphql`
   query ArticleBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    markdownRemark(
+      fields: { slug: { eq: $slug } }
+      frontmatter: { type: { eq: "article" } }
+    ) {
       html
-      excerpt
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
-        tags
+        description
         slug
+        tags
       }
     }
   }

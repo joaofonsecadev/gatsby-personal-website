@@ -1,4 +1,3 @@
-import type { GatsbyNode } from "gatsby";
 import { slugify } from "./src/utils/helpers";
 
 const path = require("path");
@@ -7,7 +6,7 @@ const createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   const articlePage = path.resolve("./src/templates/article.tsx");
-  const categoryPage = path.resolve("./src/templates/category.tsx");
+  const pagePage = path.resolve("./src/templates/page.tsx");
   const tagPage = path.resolve("./src/templates/tag.tsx");
 
   const result = await graphql(
@@ -24,6 +23,7 @@ const createPages = async ({ graphql, actions }) => {
                 title
                 tags
                 slug
+                type
               }
             }
           }
@@ -32,10 +32,24 @@ const createPages = async ({ graphql, actions }) => {
     `
   );
 
-  const articles = result.data.allMarkdownRemark.edges;
+  const articles = result.data.allMarkdownRemark.edges.filter(
+    (article) => article.node.frontmatter.type === "article"
+  );
+  const pages = result.data.allMarkdownRemark.edges.filter(
+    (page) => page.node.frontmatter.type === "page"
+  );
 
   const tagSet = new Set();
-  const categorySet = new Set();
+
+  pages.forEach((page) => {
+    createPage({
+      path: page.node.frontmatter.slug,
+      component: pagePage,
+      context: {
+        slug: page.node.frontmatter.slug,
+      },
+    });
+  });
 
   articles.forEach((article, i) => {
     const prev = i === articles.length - 1 ? null : articles[i + 1].node;

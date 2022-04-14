@@ -36,7 +36,9 @@ export const pageQuery = graphql`
   query BlogQuery {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { public: { eq: "true" } } }
+      filter: {
+        frontmatter: { public: { eq: "true" }, type: { eq: "article" } }
+      }
     ) {
       edges {
         node {

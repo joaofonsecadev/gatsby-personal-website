@@ -25,7 +25,7 @@ export default function Post({ node, query, prefix, hideDate, yearOnly }) {
     if (inQuery) {
       const re = new RegExp(
         inQuery.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
-        "i"
+        "i",
       );
       const highlightStart = title.search(re);
 

@@ -11,7 +11,7 @@ export default function PageTemplate({ data }) {
   return (
     <>
       <Helmet
-        title={`${title} | ${
+        title={`${title} - ${
           config.title
         }`}
       />

@@ -1,5 +1,6 @@
 {
-  "extends": ["airbnb", "airbnb-typescript"],
+  "extends": ["airbnb", "airbnb-typescript", "prettier"],
+  "plugins": ["prettier"],
   "parserOptions": { "project": ["./tsconfig.json"] },
   "settings": {
     "react": {
@@ -7,15 +8,16 @@
     }
   },
   "rules": {
-    "no-anonymous-exports-page-templates": "warn",
-    "object-curly-newline": "warn",
-    "arrow-body-style": "warn",
-    "import/prefer-default-export": "warn",
-    "limited-exports-page-templates": "warn",
-    "no-nested-ternary": "warn",
-    "@typescript-eslint/quotes": "warn",
+    "no-anonymous-exports-page-templates": "off",
+    "object-curly-newline": "off",
+    "arrow-body-style": "off",
+    "import/prefer-default-export": "off",
+    "limited-exports-page-templates": "off",
+    "no-nested-ternary": "off",
+    "@typescript-eslint/quotes": "off",
     "react/function-component-definition": "off",
-    "react/prop-types": "warn",
-    "react/jsx-one-expression-per-line": "off"
+    "react/prop-types": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "prettier/prettier": "error"
   }
 }

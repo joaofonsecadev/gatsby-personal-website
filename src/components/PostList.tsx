@@ -23,7 +23,7 @@ export default function PostList({
   }, [data]);
   const years = useMemo(
     () => Object.keys(postsByYear).reverse(),
-    [postsByYear],
+    [postsByYear]
   );
 
   if (showYears) {

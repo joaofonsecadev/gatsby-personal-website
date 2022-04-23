@@ -9,10 +9,8 @@ export default function Article({ data, pageContext }) {
   const { totalCount } = data.allMarkdownRemark;
   const simplifiedArticles = useMemo(
     () => getSimplifiedArticles(articles),
-    [articles],
+    [articles]
   );
-
-  console.log(totalCount);
 
   return (
     <article>

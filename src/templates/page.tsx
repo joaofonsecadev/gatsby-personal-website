@@ -8,15 +8,14 @@ export default function PageTemplate({ data }) {
   const post = data.markdownRemark;
   const { title, description, slug } = post.frontmatter;
 
+  let metaTitle = title;
+  if (title === config.title) metaTitle = "Resume";
+
   return (
     <>
-      <Helmet
-        title={`${title} - ${
-          config.title
-        }`}
-      />
+      <Helmet title={`${metaTitle} - ${config.title}`} />
 
-      <article id={slug}>
+      <article id={slug.substring(1)}>
         <header>
           <div className="container">
             <h1>{title}</h1>

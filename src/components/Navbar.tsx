@@ -7,6 +7,7 @@ import bookIcon from "../assets/openBook.png";
 
 const navMainItems = [
   { url: "/articles", icon: articlesIcon, label: "Articles" },
+  { url: "/photos", icon: articlesIcon, label: "Photos" },
   { url: "/about", icon: aboutIcon, label: "About Me" },
 ];
 

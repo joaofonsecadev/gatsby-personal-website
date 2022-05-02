@@ -3,21 +3,13 @@ import { Link } from "gatsby";
 
 import articlesIcon from "../assets/scroll.png";
 import aboutIcon from "../assets/helmet.png";
-import bookIcon from "../assets/openBook.png";
+
+import config from "../utils/config";
 
 const navMainItems = [
   { url: "/articles", icon: articlesIcon, label: "Articles" },
   { url: "/photos", icon: articlesIcon, label: "Photos" },
   { url: "/about", icon: aboutIcon, label: "About Me" },
-];
-
-const navSocialItems = [
-  { url: "https://github.com/joaofonsecadev", icon: bookIcon, label: "Github" },
-  {
-    url: "https://twitter.com/joaofonsecadev",
-    icon: bookIcon,
-    label: "Twitter",
-  },
 ];
 
 export default function Navbar() {
@@ -39,9 +31,9 @@ export default function Navbar() {
             ))}
           </nav>
         </div>
-        <div className="toolbar-section">
+        <div className="toolbar-section desktop-only">
           <nav className="social-nav">
-            {navSocialItems.map((item) => (
+            {config.socials.map((item) => (
               <a
                 href={item.url}
                 target="_blank"

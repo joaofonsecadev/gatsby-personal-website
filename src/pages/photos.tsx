@@ -20,14 +20,25 @@ export default function Photos({ data }) {
         </header>
         <section>
           <div className="container">
-            {data.allFile.edges.map((photo) => {
-              const image = getImage(
-                photo.node.childImageSharp.gatsbyImageData
-              );
-              return (
-                <GatsbyImage image={image} alt="eu" placeholder="blurred" />
-              );
-            })}
+            <div className="photo-gallery">
+              {data.allFile.edges.map((photo) => {
+                const image = getImage(
+                  photo.node.childImageSharp.gatsbyImageData
+                );
+                let setPortrait;
+                if (image.width / image.height < 1)
+                  setPortrait = { width: "50%" };
+                return (
+                  <div
+                    key={photo.node.name}
+                    className="photo-element"
+                    style={setPortrait}
+                  >
+                    <GatsbyImage image={image} alt="eu" />
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </section>
       </article>
@@ -37,9 +48,13 @@ export default function Photos({ data }) {
 
 export const pageQuery = graphql`
   query PhotosQuery {
-    allFile(filter: { relativeDirectory: { eq: "photos" } }) {
+    allFile(
+      filter: { relativeDirectory: { eq: "photos" } }
+      sort: { fields: name, order: ASC }
+    ) {
       edges {
         node {
+          name
           childImageSharp {
             gatsbyImageData
           }

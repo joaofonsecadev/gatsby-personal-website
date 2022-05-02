@@ -504,6 +504,16 @@ strong {
     }
 }
 
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.photo-element {
+    padding: 3px;
+}
+
 #resume {
     header {
         text-align: left;

@@ -529,6 +529,16 @@ strong {
 
 .photo-element {
     padding: 3px;
+
+    a {
+        background: transparent;
+        border: 0;
+
+        &:hover {
+            background: transparent;
+            border: 0;
+        }
+    }
 }
 
 #resume {
@@ -816,7 +826,7 @@ strong {
     }
 
     .photo-element {
-        width: 100%!important;
+        width: 100% !important;
     }
 }
 

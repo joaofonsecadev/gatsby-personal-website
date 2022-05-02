@@ -34,7 +34,13 @@ export default function Photos({ data }) {
                     className="photo-element"
                     style={setPortrait}
                   >
-                    <GatsbyImage image={image} alt="eu" />
+                    <a
+                      href={image?.images.fallback?.src}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <GatsbyImage image={image} alt="eu" />
+                    </a>
                   </div>
                 );
               })}

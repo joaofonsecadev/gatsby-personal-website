@@ -54,6 +54,7 @@ export const pageQuery = graphql`
         description
         slug
         tags
+        date(formatString: "MMMM DD, YYYY")
       }
     }
   }

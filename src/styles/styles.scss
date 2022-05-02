@@ -814,6 +814,10 @@ strong {
     .project img {
         max-height: 50px;
     }
+
+    .photo-element {
+        width: 100%!important;
+    }
 }
 
 @media screen and (min-width: 800px) {

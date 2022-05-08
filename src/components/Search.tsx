@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { useFlexSearch } from "react-use-flexsearch";
 import * as queryString from "query-string";
 import { useLocation, navigate } from "@reach/router";
-import searchIcon from "../assets/openBook.png";
+import magnGlass from "../assets/maglass.png";
 import PostList from "./PostList";
 
 export default function Search({ data }) {
@@ -43,7 +43,7 @@ export default function Search({ data }) {
             setQuery(e.target.value);
           }}
         />
-        <img className="search-icon" src={searchIcon} alt="Search" />
+        <img className="search-icon" src={magnGlass} alt="Search" />
       </div>
       <section>
         {query ? (

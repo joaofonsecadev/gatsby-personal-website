@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import articlesIcon from "../assets/scroll.png";
-import aboutIcon from "../assets/helmet.png";
+import bookIcon from "../assets/book.png";
+import controllerIcon from "../assets/controller.png";
+import cameraIcon from "../assets/camera.png";
 
 import config from "../utils/config";
 
 const navMainItems = [
-  { url: "/articles", icon: articlesIcon, label: "Articles" },
-  { url: "/photos", icon: articlesIcon, label: "Photos" },
-  { url: "/about", icon: aboutIcon, label: "About Me" },
+  { url: "/articles", icon: bookIcon, label: "Articles" },
+  { url: "/photos", icon: cameraIcon, label: "Photos" },
+  { url: "/about", icon: controllerIcon, label: "About Me" },
 ];
 
 export default function Navbar() {

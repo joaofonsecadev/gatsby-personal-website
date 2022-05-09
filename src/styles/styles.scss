@@ -1,6 +1,7 @@
 // @import './_themeDark.scss';
 //@import './_themeMidnight.scss';
 @import './themeMonokai';
+@import './_prismjs.css';
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto+Mono&display=swap');
 
@@ -253,6 +254,22 @@ article {
         font-size: 1.4rem;
         margin-bottom: 0;
         line-height: 1.4;
+    }
+}
+
+blockquote {
+    background: #353036;
+    border-left: 4px solid $accent;
+    border-radius: 8px;
+    font-family: $fontPost;
+    padding: 1.5rem;
+
+    p {
+        margin-bottom: 0;
+    }
+
+    ul {
+        margin-bottom: 0;
     }
 }
 
@@ -644,6 +661,10 @@ strong {
     min-height: 100vh;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.gatsby-highlight {
+    font-size: 0.9rem;
 }
 
 @media screen and (max-width: 800px) {

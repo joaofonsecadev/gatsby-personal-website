@@ -14,7 +14,7 @@ export default function WebIndex({ data }) {
 
   return (
     <>
-      <Helmet title={`${SiteConfig.title} - Game Developer`} />
+      <Helmet title={`${SiteConfig.title} | Game Developer`} />
       <SEO />
       <article className="hero">
         <header>

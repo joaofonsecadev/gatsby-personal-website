@@ -13,7 +13,7 @@ export default function PageTemplate({ data }) {
 
   return (
     <>
-      <Helmet title={`${metaTitle} - ${config.title}`} />
+      <Helmet title={`${metaTitle} ${config.titleSep}`} />
 
       <article id={slug.substring(1)}>
         <header>

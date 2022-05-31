@@ -1,7 +1,9 @@
 import React, { useMemo } from "react";
 import { graphql } from "gatsby";
+import Helmet from "react-helmet";
 import PostList from "../components/PostList";
 import { getSimplifiedArticles } from "../utils/helpers";
+import config from "../utils/config";
 
 export default function Article({ data, pageContext }) {
   const { tag } = pageContext;
@@ -13,23 +15,26 @@ export default function Article({ data, pageContext }) {
   );
 
   return (
-    <article>
-      <header>
-        <div className="container">
-          <h1>
-            <span>Articles tagged</span>{" "}
-            <span className="primary-underline">{tag}</span>
-          </h1>
-          <p className="description">
-            <span className="count bright">{totalCount}</span>
-            {totalCount === 1 ? " article found" : " articles found"}
-          </p>
-        </div>
-      </header>
-      <section className="container">
-        <PostList data={simplifiedArticles} />
-      </section>
-    </article>
+    <>
+      <Helmet title={`Tag: ${tag} ${config.titleSep}`} />
+      <article>
+        <header>
+          <div className="container">
+            <h1>
+              <span>Articles tagged</span>{" "}
+              <span className="primary-underline">{tag}</span>
+            </h1>
+            <p className="description">
+              <span className="count bright">{totalCount}</span>
+              {totalCount === 1 ? " article found" : " articles found"}
+            </p>
+          </div>
+        </header>
+        <section className="container">
+          <PostList data={simplifiedArticles} />
+        </section>
+      </article>
+    </>
   );
 }
 

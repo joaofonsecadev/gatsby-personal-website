@@ -3,6 +3,7 @@ import githubLogo from "../assets/github.png";
 
 const siteConfig = {
   title: "João Fonseca",
+  titleSep: "| João Fonseca",
   url: "https://joaofonseca.dev",
   // siteLogo: '/logo.png',
   description:

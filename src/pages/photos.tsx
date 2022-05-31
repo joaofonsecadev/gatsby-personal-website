@@ -7,7 +7,7 @@ import SiteConfig from "../utils/config";
 export default function Photos({ data }) {
   return (
     <>
-      <Helmet title={`Photos - ${SiteConfig.title}`} />
+      <Helmet title={`Photos ${SiteConfig.titleSep}`} />
       <article className="blog-page">
         <header>
           <div className="container">

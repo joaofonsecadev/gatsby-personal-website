@@ -11,7 +11,7 @@ export default function Articles({ data }) {
 
   return (
     <>
-      <Helmet title={`Articles - ${SiteConfig.title}`} />
+      <Helmet title={`Articles ${SiteConfig.titleSep}`} />
       <article className="blog-page">
         <header>
           <div className="container">

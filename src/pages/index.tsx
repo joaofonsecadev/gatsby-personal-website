@@ -4,7 +4,6 @@ import Helmet from "react-helmet";
 import SEO from "../components/SEO";
 import SiteConfig from "../utils/config";
 import profilePicture from "../assets/pfp.jpg";
-import controllerIcon from "../assets/controller.png";
 import { getSimplifiedArticles } from "../utils/helpers";
 import PostList from "../components/PostList";
 
@@ -38,7 +37,6 @@ export default function WebIndex({ data }) {
             </div>
             <p className="hero-buttons">
               <Link to="/about" className="hero-button">
-                <img src={controllerIcon} alt="Me" />
                 More about me
               </Link>
             </p>

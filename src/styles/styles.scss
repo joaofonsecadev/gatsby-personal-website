@@ -10,7 +10,7 @@ $fontHeading: -apple-system,BlinkMacSystemFont,"Helvetica Neue","Roboto",Roboto,
 $fontPost: -apple-system,BlinkMacSystemFont,"Helvetica Neue","Roboto",Roboto,Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 $fontCode: "IBM Plex Mono",Menlo,monospace;
 
-$pageWidth: 1060px;
+$pageWidth: 1160px;
 $navbarWidth: 80px;
 $navbarHeight: 60px;
 $footerHeight: 28px;
@@ -290,7 +290,6 @@ strong {
 .navigation {
     background: $backgroundNavbar;
     border-bottom: 1px solid $borderLight;
-    height: $navbarHeight;
     left: 0;
     position: fixed;
     top: 0;
@@ -303,6 +302,12 @@ strong {
 
     button:focus-visible {
         outline: 3px solid $accent;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        height: $navbarHeight;
     }
 
     nav {
@@ -867,6 +872,12 @@ strong {
     th,
     td {
         -webkit-text-size-adjust: none;
+    }
+
+    .navigation {
+        .container {
+            height: $navbarHeight + 20;
+        }
     }
 }
 

@@ -1,39 +1,31 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import bookIcon from "../assets/book.png";
-import controllerIcon from "../assets/controller.png";
-import cameraIcon from "../assets/camera.png";
 import retroPc from "../assets/retropc.png";
 
 import config from "../utils/config";
 
 const navMainItems = [
-  { url: "/blog", icon: bookIcon, label: "Writting" },
-  { url: "/photos", icon: cameraIcon, label: "Photos" },
-  { url: "/about", icon: controllerIcon, label: "About Me" },
+  { url: "/blog", label: "Writting" },
+  { url: "/photos", label: "Photos" },
+  { url: "/about", label: "About Me" },
 ];
 
 export default function Navbar() {
   return (
     <header className="navigation">
-      <div className="navigation-inner">
-        <nav className="brand-section">
+      <div className="container">
+        <nav>
           <Link to="/" className="brand">
             <img src={retroPc} className="logo" alt="João Fonseca" />
-            <span>João Fonseca</span>
+            <span className="desktop-only">João Fonseca</span>
           </Link>
+          {navMainItems.map((item) => (
+            <Link to={item.url} key={item.label} activeClassName="active">
+              <div className="tooltip">{item.label}</div>
+            </Link>
+          ))}
         </nav>
-        <div>
-          <nav>
-            {navMainItems.map((item) => (
-              <Link to={item.url} key={item.label} activeClassName="active">
-                <img src={item.icon} alt={item.label} />
-                <div className="tooltip">{item.label}</div>
-              </Link>
-            ))}
-          </nav>
-        </div>
         <div className="toolbar-section desktop-only">
           <nav className="social-nav">
             {config.socials.map((item) => (
@@ -43,7 +35,7 @@ export default function Navbar() {
                 rel="noreferrer"
                 key={item.label}
               >
-                <img src={item.icon} alt={item.label} />
+                <span>{item.label}</span>
               </a>
             ))}
           </nav>

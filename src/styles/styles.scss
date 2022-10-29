@@ -29,6 +29,7 @@ $inputBackground: #0000004d;
 $scrollbarHandle: #37333a;
 
 $gray0: #f8f9fa;
+$gray4: #ced4da;
 $gray6: #868e96;
 $gray7: #4b5056;
 $gray8: #31363b;
@@ -149,10 +150,6 @@ a {
         color: $fontTextBrightInvert;
         display: block;
         padding: 0.5rem 1rem;
-
-        &:hover {
-            filter: brightness(1.1)
-        }
     }
 
     &.post {
@@ -338,17 +335,19 @@ strong {
             align-items: center;
             display: flex;
             justify-content: center;
-            border-radius: 4px;
-            color: $fontText;
+            border-radius: 3px;
+            border: 2px solid #00000000;
+            color: $gray4;
             font-size: .9rem;
             font-weight: 500;
             gap: 0.4rem;
             line-height: 1.1;
-            padding: 0.5rem;
+            margin: .7rem;
+            padding: .3rem 0;
 
-            &:hover {
-                background: $navHover;
-                color: $fontTextBright;
+            &:hover, &.active {
+                border-bottom-color: $accent;
+                color: white;
             }
 
             &.item.brand {
@@ -356,6 +355,8 @@ strong {
                 background-color: $gray8;
                 padding: .4rem .5rem;
                 color: $gray0;
+                margin-left: 0;
+                margin-right: .5rem;
 
                 &:hover {
                     background-color: $gray7;
@@ -749,8 +750,7 @@ strong {
             a {
                 flex-direction: column;
                 gap: 0.25rem;
-                font-size: 0.8rem;
-                padding: 0 0.25rem;
+                margin: .3rem;
 
                 &:hover {
                     background: transparent;
@@ -927,11 +927,16 @@ strong {
     }
 }
 
-@media screen and (min-width: 600px) {
-    .projects {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, 300px);
-        justify-content: center;
-        grid-gap: 2rem;
+@media screen and (min-width: 500px) {
+    .navigation {
+        nav {
+            a {
+                font-size: 1.05rem;
+            }
+
+            a.item.brand {
+                margin-right: 1.3rem;
+            }
+        }
     }
 }

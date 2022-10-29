@@ -6,7 +6,7 @@ import retroPc from "../assets/retropc.png";
 import config from "../utils/config";
 
 const navMainItems = [
-  { url: "/blog", label: "Writting" },
+  { url: "/blog", label: "Writing" },
   { url: "/photos", label: "Photos" },
   { url: "/about", label: "About Me" },
 ];

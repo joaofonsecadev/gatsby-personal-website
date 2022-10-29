@@ -2,7 +2,7 @@
  pre[class*="language-"] {
      color: #ccc;
      background: none;
-     font-family: Menlo, "Roboto Mono", Courier New, monospace;
+     font-family: "IBM Plex Mono",Menlo,monospace;
      font-size: 1em;
      text-align: left;
      white-space: pre;

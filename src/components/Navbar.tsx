@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import bookIcon from "../assets/book.png";
 import controllerIcon from "../assets/controller.png";
 import cameraIcon from "../assets/camera.png";
+import retroPc from "../assets/retropc.png";
 
 import config from "../utils/config";
 
@@ -19,6 +20,7 @@ export default function Navbar() {
       <div className="navigation-inner">
         <nav className="brand-section">
           <Link to="/" className="brand">
+            <img src={retroPc} className="logo" alt="João Fonseca" />
             <span>João Fonseca</span>
           </Link>
         </nav>

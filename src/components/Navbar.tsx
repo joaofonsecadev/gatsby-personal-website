@@ -16,7 +16,7 @@ export default function Navbar() {
     <header className="navigation">
       <div className="container">
         <nav>
-          <Link to="/" className="brand">
+          <Link to="/" className="item brand">
             <img src={retroPc} className="logo" alt="João Fonseca" />
             <span className="desktop-only">João Fonseca</span>
           </Link>

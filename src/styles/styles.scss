@@ -1,6 +1,3 @@
-// @import './_themeDark.scss';
-@import './_themeMidnight.scss';
-//@import './themeMonokai';
 @import './_prismjs.css';
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;700&family=Merriweather:wght@400;700&display=swap');
@@ -15,6 +12,26 @@ $navbarWidth: 80px;
 $navbarHeight: 60px;
 $footerHeight: 28px;
 $headerHeight: 35px;
+
+$background: #31363b;
+$backgroundTabs: #00000000;
+$backgroundNavbar: #212529;
+
+$navHover: #272a33;
+$accent: #72bf8d;
+$accentSecond: #99e5b3;
+$fontTextBright: #eeeeee;
+$fontTextDark: #8f949d;
+$fontText: #d0d5df;
+$fontTextBrightInvert: #111111;
+$borderLight: #ffffff1a;
+$inputBackground: #0000004d;
+$scrollbarHandle: #37333a;
+
+$gray0: #f8f9fa;
+$gray6: #868e96;
+$gray7: #4b5056;
+$gray8: #31363b;
 
 ::marker {
     color: $accent;
@@ -321,7 +338,7 @@ strong {
             align-items: center;
             display: flex;
             justify-content: center;
-            border-radius: 8px;
+            border-radius: 4px;
             color: $fontText;
             font-size: .9rem;
             font-weight: 500;
@@ -334,9 +351,26 @@ strong {
                 color: $fontTextBright;
             }
 
+            &.item.brand {
+                border: 2px solid $gray7;
+                background-color: $gray8;
+                padding: .4rem .5rem;
+                color: $gray0;
+
+                &:hover {
+                    background-color: $gray7;
+                    border-color: $gray6;
+                }
+            }
+
+            &.item:hover {
+                color: white;
+            }
+
             &.brand {
-                font-size: 1rem;
-                font-weight: 600;
+                font-size: 1.1rem;
+                font-weight: 700;
+                
 
                 span {
                     white-space: nowrap;
@@ -878,6 +912,18 @@ strong {
         .container {
             height: $navbarHeight + 20;
         }
+
+        .logo {
+            margin-right: .5rem;
+        }
+
+        nav {
+            a {
+                &.item.brand {
+                    padding: .6rem .8rem;
+                }
+            }
+        }        
     }
 }
 

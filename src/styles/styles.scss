@@ -1,6 +1,6 @@
 // @import './_themeDark.scss';
-//@import './_themeMidnight.scss';
-@import './themeMonokai';
+@import './_themeMidnight.scss';
+//@import './themeMonokai';
 @import './_prismjs.css';
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto+Mono&display=swap');
@@ -456,7 +456,7 @@ strong {
     grid-gap: 1rem;
     align-items: center;
     display: grid;
-    grid-template-columns: auto 50px;
+    grid-template-columns: auto;
 }
 
 .search-input {

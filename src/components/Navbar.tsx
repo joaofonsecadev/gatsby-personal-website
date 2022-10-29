@@ -8,7 +8,7 @@ import cameraIcon from "../assets/camera.png";
 import config from "../utils/config";
 
 const navMainItems = [
-  { url: "/articles", icon: bookIcon, label: "Articles" },
+  { url: "/blog", icon: bookIcon, label: "Writting" },
   { url: "/photos", icon: cameraIcon, label: "Photos" },
   { url: "/about", icon: controllerIcon, label: "About Me" },
 ];

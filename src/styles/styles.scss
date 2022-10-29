@@ -402,6 +402,13 @@ strong {
     display: flex;
     flex: 0 0 116px;
     justify-content: flex-end;
+
+    nav {
+        a {
+            margin-left: 1rem;
+            margin-right: 0;
+        }
+    }
 }
 
 .container {

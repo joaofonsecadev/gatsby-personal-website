@@ -3,8 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;700&family=Merriweather:wght@400;700&display=swap');
 
 $fontFamily: "Inter",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
-$fontHeading: -apple-system,BlinkMacSystemFont,"Helvetica Neue","Roboto",Roboto,Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-$fontPost: -apple-system,BlinkMacSystemFont,"Helvetica Neue","Roboto",Roboto,Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+$fontHeading: $fontFamily;
+$fontPost: $fontFamily;
 $fontCode: "IBM Plex Mono",Menlo,monospace;
 
 $pageWidth: 1160px;
@@ -29,6 +29,7 @@ $inputBackground: #0000004d;
 $scrollbarHandle: #37333a;
 
 $gray0: #f8f9fa;
+$gray2: #e9ecef;
 $gray4: #ced4da;
 $gray6: #868e96;
 $gray7: #4b5056;
@@ -100,7 +101,7 @@ h2,
 h3,
 h4,
 h5 {
-    color: $accent;
+    color: white;
     font-family: $fontHeading;
     font-weight: 500;
     line-height: 1.2;
@@ -111,7 +112,6 @@ h5 {
 h3,
 h4,
 h5 {
-    color: $accentSecond;
     font-weight: 400;
 }
 
@@ -145,11 +145,26 @@ a {
     }
 
     &.button {
-        background: $accent;
-        border: 1px solid $accent !important;
-        color: $fontTextBrightInvert;
-        display: block;
-        padding: 0.5rem 1rem;
+        align-items: center;
+        -webkit-appearance: none;
+        background: $gray8;
+        border: 2px solid $gray7;
+        border-radius: 4px;
+        color: $gray2;
+        display: inline-flex;
+        font-family: $fontFamily;
+        font-size: 1rem;
+        font-weight: 400;
+        gap: .25rem;
+        letter-spacing: 0;
+        line-height: 1;
+        padding: .6rem 1rem;
+
+        &:hover {
+            background-color: transparent;
+            color: white;
+            border-color: $gray6;
+        }
     }
 
     &.post {
@@ -221,7 +236,6 @@ article {
     }
 
     h2 {
-        border-bottom: 1px solid $borderLight;
         font-size: 2rem;
         font-weight: 600;
         padding-bottom: 0.25rem;
@@ -244,17 +258,11 @@ article {
     }
 
     a {
-        font-weight: 600;
-        color: $fontTextBright;
-        border-top: 2px solid transparent;
-        border-bottom: 2px solid $accent;
+        color: $accent;
 
         &:hover {
-            font-weight: 600;
             background: $accent;
             color: $fontTextBrightInvert;
-            border-top: 2px solid $accent;
-            border-bottom: 2px solid $accent;
         }
     }
 
@@ -303,7 +311,7 @@ strong {
 
 .navigation {
     background: $backgroundNavbar;
-    border-bottom: 1px solid $borderLight;
+    border-bottom: 2px solid $gray7;
     left: 0;
     position: fixed;
     top: 0;
@@ -435,12 +443,16 @@ strong {
     }
 
     h1 {
-        font-size: 3rem;
-        margin-bottom: 0.75rem;
+        font-size: 2.4rem;
+        margin: 0;
+        color: white;
+        font-weight: 700;
+        line-height: 1.1;
     }
 
     p {
         &.subtitle {
+            margin-top: 1.5rem;
             font-size: 1.2rem;
         }
     }
@@ -490,7 +502,6 @@ strong {
 
 .main-header {
     align-items: center;
-    border-bottom: 1px solid $borderLight;
     display: flex;
     justify-content: space-between;
 
@@ -913,6 +924,12 @@ strong {
     th,
     td {
         -webkit-text-size-adjust: none;
+    }
+
+    .hero {
+        h1 {
+            font-size: 3rem;
+        }
     }
 
     .navigation {

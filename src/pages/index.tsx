@@ -20,32 +20,30 @@ export default function WebIndex({ data }) {
           <div className="container">
             <div className="flex-content">
               <div>
-                <h1>Hey, I&apos;m João.</h1>
+                <h1>Hey, I&apos;m João!</h1>
                 <p className="subtitle small">
-                  I&apos;m a game developer from Lisbon, Portugal. Currently
-                  working as an Automation Test Engineer at Funcom, for the{" "}
+                  I&apos;m a game developer from Lisbon, Portugal, who&apos;s
+                  currently working as an Automation Test Engineer at Funcom,
+                  for the open world survival MMO{" "}
                   <a
-                    href="https://pr.funcom.com/Unannounced-Dune-survival-game"
+                    href="https://dunegames.com/"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    open-world survival Dune game.
+                    Dune: Awakening.
                   </a>
                 </p>
               </div>
               <img src={profilePicture} alt="Me" className="main-image" />
             </div>
-            <p className="hero-buttons">
-              <Link to="/about" className="hero-button">
-                More about me
-              </Link>
-            </p>
           </div>
         </header>
         <div className="container">
           <h2 className="main-header">
-            <span>Latest Articles</span>
-            <Link to="/articles">View All</Link>
+            <span>Latest Posts</span>
+            <Link className="button" to="/blog">
+              View all
+            </Link>
           </h2>
           <PostList data={simpleLatest} />
         </div>

@@ -120,7 +120,7 @@ ol,
 p,
 table,
 ul {
-    color: $fontText;
+    color: $gray2;
     font-size: 1.1rem;
     margin: 0 0 2rem;
 }
@@ -508,6 +508,12 @@ strong {
     a {
         font-size: 1rem;
     }
+
+    span {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 0;
+    }
 }
 
 .search-bar {
@@ -672,7 +678,7 @@ strong {
 
 .footer {
     background: $backgroundNavbar;
-    border-top: 1px solid $borderLight;
+    border-top: 2px solid $gray7;
     font-family: $fontPost;
     padding: 1rem 0;
 
@@ -706,11 +712,11 @@ strong {
     }
 
     span {
-        color: $fontTextBright;
+        color: $gray2;
     }
 
     .copyright {
-        color: $fontTextDark;
+        color: $gray2;
     }
 }
 
@@ -948,6 +954,12 @@ strong {
                 }
             }
         }        
+    }
+
+    .main-header {
+        span {
+            font-size: 1.7rem;
+        }
     }
 }
 

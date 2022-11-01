@@ -19,7 +19,6 @@ export default function Footer() {
                 key={item.url}
               >
                 <span>{item.label}</span>
-                <img src={item.icon} alt={item.label} />
               </a>
             );
           })}

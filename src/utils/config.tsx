@@ -1,5 +1,5 @@
-import twitterLogo from "../assets/twitter.png";
-import githubLogo from "../assets/github.png";
+import IconTwitter from "../assets/comp-twitter";
+import IconGithub from "../assets/comp-github";
 
 const siteConfig = {
   title: "João Fonseca",
@@ -11,12 +11,12 @@ const siteConfig = {
   socials: [
     {
       url: "https://github.com/joaofonsecadev",
-      icon: githubLogo,
+      icon: IconGithub,
       label: "Github",
     },
     {
       url: "https://twitter.com/joaofonsecadev",
-      icon: twitterLogo,
+      icon: IconTwitter,
       label: "Twitter",
     },
   ],

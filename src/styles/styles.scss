@@ -677,10 +677,10 @@ strong {
 }
 
 .footer {
-    background: $backgroundNavbar;
-    border-top: 2px solid $gray7;
+    background: transparent;
+    border-top: 2px solid transparent;
     font-family: $fontPost;
-    padding: 1rem 0;
+    padding: 3rem 0;
 
     section {
         align-items: center;
@@ -704,15 +704,11 @@ strong {
     a,
     span {
         align-items: center;
-        color: $fontTextDark;
+        color: $gray2;
         display: flex;
         font-size: .9rem;
         line-height: 1.2;
         padding: 0 0.5rem;
-    }
-
-    span {
-        color: $gray2;
     }
 
     .copyright {

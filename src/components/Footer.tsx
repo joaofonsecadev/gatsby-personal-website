@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="footer">
       <section>
         <nav>
-          <span className="copyright">© João Fonseca</span>
+          <span className="copyright">Made by João Fonseca</span>
         </nav>
         <nav>
           {config.socials.map((item) => {
@@ -19,6 +19,7 @@ export default function Footer() {
                 key={item.url}
               >
                 <span>{item.label}</span>
+                <item.icon />
               </a>
             );
           })}

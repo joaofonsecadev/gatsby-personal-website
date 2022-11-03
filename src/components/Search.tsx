@@ -36,9 +36,7 @@ export default function Search({ data }) {
           placeholder="Begin typing to search..."
           value={query}
           onChange={(e) => {
-            navigate(
-              e.target.value ? `/articles/?search=${e.target.value}` : ""
-            );
+            navigate(e.target.value ? `/blog/?search=${e.target.value}` : "");
             setQuery(e.target.value);
           }}
         />

@@ -3,11 +3,11 @@ import { Link } from "gatsby";
 import Img from "gatsby-image";
 
 export default function Post({ node, query, prefix, hideDate, yearOnly }) {
-  const date = new Date(node.date);
+  // const date = new Date(node.date);
   const oneMonthAgo = new Date();
   oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
-  let newStatus = false;
-  if (date > oneMonthAgo) newStatus = true;
+  const newStatus = false;
+  // if (date > oneMonthAgo) newStatus = true;
 
   let formattedDate;
   let formattedYear;

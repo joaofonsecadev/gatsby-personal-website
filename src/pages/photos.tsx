@@ -12,10 +12,6 @@ export default function Photos({ data }) {
         <header>
           <div className="container">
             <h1>Photography</h1>
-            <p className="description">
-              I invest too much time and effort in photography. Here you&apos;ll
-              find the photos I think are worth sharing.
-            </p>
           </div>
         </header>
         <section>

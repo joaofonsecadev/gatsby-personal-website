@@ -1,9 +1,10 @@
-@import './_prismjs.css';
+@import './_prismjs.scss';
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;700&family=Merriweather:wght@400;700&display=swap');
 
 $fontFamily: "Inter",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
 $fontHeading: $fontFamily;
+$fontHeadingSpecial: "Merriweather",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
 $fontPost: $fontFamily;
 $fontCode: "IBM Plex Mono",Menlo,monospace;
 
@@ -12,6 +13,13 @@ $navbarWidth: 80px;
 $navbarHeight: 60px;
 $footerHeight: 28px;
 $headerHeight: 35px;
+
+$gray0: #f8f9fa;
+$gray2: #e9ecef;
+$gray4: #ced4da;
+$gray6: #868e96;
+$gray7: #4b5056;
+$gray8: #31363b;
 
 $background: #31363b;
 $backgroundTabs: #00000000;
@@ -26,14 +34,7 @@ $fontText: #d0d5df;
 $fontTextBrightInvert: #111111;
 $borderLight: #ffffff1a;
 $inputBackground: #0000004d;
-$scrollbarHandle: #37333a;
-
-$gray0: #f8f9fa;
-$gray2: #e9ecef;
-$gray4: #ced4da;
-$gray6: #868e96;
-$gray7: #4b5056;
-$gray8: #31363b;
+$scrollbarHandle: $gray7;
 
 ::marker {
     color: $accent;
@@ -88,6 +89,33 @@ main {
     margin-top: $navbarHeight;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: white;
+    font-family: $fontHeading;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 1.5rem;
+    scroll-margin-top: 80px;
+}
+
+h1:not(:first-child), h2:not(:first-child), h3:not(:first-child), h4:not(:first-child) {
+    margin-top: 3.5rem;
+  }
+
+  h2 + h3 {
+    margin-top: 1.5rem !important;
+  }
+
+h3,
+h4,
+h5 {
+    font-weight: 400;
+}
+
 h1 {
     color: $accent;
     font-family: $fontHeading;
@@ -96,23 +124,16 @@ h1 {
     scroll-margin-top: 60px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-    color: white;
-    font-family: $fontHeading;
-    font-weight: 500;
-    line-height: 1.2;
-    margin: 0 0 1.5rem;
-    scroll-margin-top: 80px;
+h2 {
+    border-bottom: 2px solid $borderLight;
+    margin: 0 0 1rem;
 }
 
-h3,
-h4,
-h5 {
-    font-weight: 400;
+h3 {
+    font-family: $fontHeadingSpecial;
+    font-size: 1.4rem;
+    font-weight: 900;
+    margin-bottom: 1.25rem;
 }
 
 blockquote,
@@ -123,6 +144,10 @@ ul {
     color: $gray2;
     font-size: 1.1rem;
     margin: 0 0 2rem;
+}
+
+ol, ul, p {
+    margin-bottom: 1.5rem;
 }
 
 a {
@@ -159,6 +184,7 @@ a {
         letter-spacing: 0;
         line-height: 1;
         padding: .6rem 1rem;
+        text-decoration: none;
 
         &:hover {
             background-color: transparent;
@@ -176,30 +202,25 @@ a {
         margin-left: -1rem;
         margin-right: -1rem;
         padding: 0.4rem 1rem;
+        text-decoration: none;
 
         h3 {
-            color: $fontText;
+            color: white;
             -webkit-filter: brightness(1);
             filter: brightness(1);
             font-family: $fontPost;
             font-size: 1.1rem;
-            font-weight: 500;
+            font-weight: 600;
             margin: 0;
         }
 
         time {
             display: block;
             font-family: $fontCode;
-            color: $fontTextDark;
+            color: $accent;
             font-size: .8rem;
             font-weight: 400;
             text-align: center;
-        }
-
-        &.new {
-            time {
-                color: $accent !important;
-            }
         }
 
         &.new .new-badge {
@@ -208,15 +229,12 @@ a {
             font-family: $fontPost;
         }
 
+        h3:hover,
         &:hover {
-            background: #00000033;
-            border: 1px solid transparent;
-            border-radius: 8px;
-            font-family: $fontPost;
-
-            time {
-                color: $fontTextDark;
-            }
+            background: transparent;
+            text-decoration: underline;
+            text-decoration-color: white;
+            text-decoration-thickness: 0.1rem;
         }
     }
 }
@@ -226,12 +244,11 @@ button:focus-visible {
 }
 
 article {
-    padding-bottom: 3rem;
 
     h1 {
-        color: $fontTextBright;
+        color: white;
         font-size: 2.6rem;
-        font-weight: 600;
+        font-weight: 700;
         margin-bottom: 0.75rem;
     }
 
@@ -241,28 +258,19 @@ article {
         padding-bottom: 0.25rem;
     }
 
-    h3 {
-        font-size: 1.8rem;
-    }
-
-    h2,
-    h3,
-    h4,
-    h5 {
-        margin: 0 0 1rem;
-    }
-
     header {
         padding-top: 2rem;
-        text-align: center;
+        text-align: left;
     }
 
     a {
         color: $accent;
+        text-decoration: underline;
 
         &:hover {
             background: $accent;
             color: $fontTextBrightInvert;
+            text-decoration: none;
         }
     }
 
@@ -437,6 +445,10 @@ strong {
 .hero {
     padding: 1rem 0;
 
+    .container {
+        padding-bottom: 0;
+    }
+
     header {
         padding: 2rem 0 0;
         text-align: left;
@@ -454,6 +466,7 @@ strong {
         &.subtitle {
             margin-top: 1.5rem;
             font-size: 1.2rem;
+            font-weight: 500;
         }
     }
 
@@ -504,6 +517,10 @@ strong {
     align-items: center;
     display: flex;
     justify-content: space-between;
+    margin-top: 3rem;
+    border-bottom: transparent;
+    margin-bottom: 0.8rem;
+    margin-top: 3rem!important;
 
     a {
         font-size: 1rem;
@@ -514,6 +531,10 @@ strong {
         font-weight: 700;
         margin-bottom: 0;
     }
+}
+
+.first-header {
+    padding-top: 0;
 }
 
 .search-bar {
@@ -558,8 +579,16 @@ strong {
 
 .blog-page {
     h2 {
-        border-bottom: 1px solid $borderLight;
+        border-bottom: 2px solid $gray7;
         margin-top: 2.5rem;
+        color: $accent;
+        margin-bottom: 0.8rem;
+    }
+}
+
+.post-details-title {
+    h1 {
+        margin-top: 0;
     }
 }
 
@@ -575,13 +604,13 @@ strong {
 }
 
 .tags {
-    align-items: center;
+    align-items: start;
     display: flex;
     flex-wrap: wrap;
     font-family: $fontPost;
     gap: 0.5rem;
-    justify-content: center;
-    margin: 1.5rem 0;
+    justify-content: start;
+    margin: 0;
 
     a {
         border: 1px solid $borderLight;
@@ -598,6 +627,7 @@ strong {
             border: 1px solid $accent;
             background: $background;
             color: $accent;
+            text-decoration: underline;
         }
     }
 }
@@ -618,60 +648,6 @@ strong {
         &:hover {
             background: transparent;
             border: 0;
-        }
-    }
-}
-
-#resume {
-    header {
-        text-align: left;
-    }
-
-    .container {
-        padding-top: 0;
-    }
-
-    section {
-
-        h2,
-        h3,
-        h4,
-        h5 {
-            margin-top: 0;
-            margin-bottom: 1rem;
-        }
-
-        h2 {
-            margin-top: 2.5rem;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            font-weight: 400;
-            border-bottom: 1px solid $borderLight;
-        }
-
-        h3 {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-weight: 400;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-
-            span {
-                display: block;
-                font-size: 1rem;
-                font-weight: 400;
-            }
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-        }
-
-        p,
-        li {
-            font-size: 1rem;
-            line-height: 1.3;
         }
     }
 }
@@ -716,6 +692,18 @@ strong {
     }
 }
 
+ul {
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+    margin-top: 0rem;
+}
+
+li {
+    line-height: 1.5;
+    margin-bottom: .25rem;
+    padding-left: .25rem;
+}
+
 .main-footer {
     display: flex;
     min-height: 100vh;
@@ -725,6 +713,28 @@ strong {
 
 .gatsby-highlight {
     font-size: 0.9rem;
+}
+
+.post-content {
+    padding-top: 0;
+}
+
+#resume {
+    header {
+        .container {
+            padding-bottom: 0;
+
+            h1 {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+#about {
+    .container {
+        padding-bottom: 0;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -747,7 +757,6 @@ strong {
         margin-top: 60px;
     }
 
-    ul,
     ol {
         padding-left: 1rem;
     }
@@ -827,10 +836,6 @@ strong {
 
         header {
             padding: 1rem 0 0;
-        }
-
-        .container {
-            padding-bottom: 1rem;
         }
 
         p {

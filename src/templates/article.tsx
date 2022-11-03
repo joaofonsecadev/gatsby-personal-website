@@ -1,8 +1,8 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import Helmet from "react-helmet";
-import { slugify } from "../utils/helpers";
 import config from "../utils/config";
+import { slugify } from "../utils/helpers";
 
 export default function Article({ data }) {
   const article = data.markdownRemark;
@@ -14,10 +14,9 @@ export default function Article({ data }) {
       <Helmet title={`${title} ${config.titleSep}`} />
       <article>
         <header>
-          <div className="container">
+          <div className="container post-details-title">
             <div className="post-details">
-              Written by <Link to="/about">João Fonseca</Link> on{" "}
-              <time>{date}</time>
+              Written on <time>{date}</time>
             </div>
             <h1>{title}</h1>
             <div className="post-meta">

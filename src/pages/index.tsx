@@ -23,8 +23,8 @@ export default function WebIndex({ data }) {
                 <h1>Hey, I&apos;m João!</h1>
                 <p className="subtitle small">
                   I&apos;m a game developer from Lisbon, Portugal, who&apos;s
-                  currently working as an Automation Test Engineer at Funcom,
-                  for the open world survival MMO{" "}
+                  currently working as an Automation Test Engineer at Funcom for
+                  the open-world survival MMO{" "}
                   <a
                     href="https://dunegames.com/"
                     target="_blank"
@@ -32,13 +32,18 @@ export default function WebIndex({ data }) {
                   >
                     Dune: Awakening.
                   </a>
+                  <br />
+                  <br />
+                  Besides programming, I also take average{" "}
+                  <Link to="/photos">photos</Link> and convince myself I can
+                  play the guitar.
                 </p>
               </div>
               <img src={profilePicture} alt="Me" className="main-image" />
             </div>
           </div>
         </header>
-        <div className="container">
+        <div className="container first-header">
           <h2 className="main-header">
             <span>Latest Posts</span>
             <Link className="button" to="/blog">
@@ -46,6 +51,18 @@ export default function WebIndex({ data }) {
             </Link>
           </h2>
           <PostList data={simpleLatest} />
+          <h2 className="main-header">
+            <span>Stay in touch</span>
+          </h2>
+          <p>I promise, no spamming.</p>
+          <a
+            className="button"
+            href="http://eepurl.com/icQEh5"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Subscribe to the newsletter
+          </a>
         </div>
       </article>
     </>

@@ -27,7 +27,7 @@
      padding: 1em;
      margin: .5em 0;
      overflow: auto;
-     border-radius: 6px;
+     border-radius: 4px;
  }
 
  :not(pre)>code[class*="language-"],
@@ -39,9 +39,10 @@
  :not(pre)>code[class*="language-"] {
      font-size: 0.95rem;
      font-weight: 500;
-     padding: 2px 3px;
-     border-radius: 6px;
+     padding: .2rem .3rem;
+     border-radius: 4px;
      white-space: pre-wrap;
+     z-index: -1;
  }
 
  .token.comment,

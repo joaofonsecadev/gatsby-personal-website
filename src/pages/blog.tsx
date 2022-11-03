@@ -14,12 +14,8 @@ export default function Articles({ data }) {
       <Helmet title={`Articles ${SiteConfig.titleSep}`} />
       <article className="blog-page">
         <header>
-          <div className="container">
-            <h1>Articles</h1>
-            <p className="description">
-              Whatever I feel like writting. You may find tutorials, technical
-              analysis, reviews of various types of content, etc.
-            </p>
+          <div className="container blogh1">
+            <h1>Writing</h1>
           </div>
         </header>
         <section>

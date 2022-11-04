@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-pages-blog-tsx",
-    "path": "/blog/",
-    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"id":"b896019e-a2b2-5816-8b0a-e8b73f33fb63","frontmatter":{"date":"June 01, 2022","title":"Welcome to my blog!","tags":["meta"],"slug":"/welcome-blog"}}}]}},"pageContext":{}},
-    "staticQueryHashes": ["1592163531"]}

@@ -16,7 +16,7 @@ export default function Article({ data }) {
         <header>
           <div className="container post-details-title">
             <div className="post-details">
-              Written on <time>{date}</time>
+              Published on <time>{date}</time>
             </div>
             <h1>{title}</h1>
             <div className="post-meta">

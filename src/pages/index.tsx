@@ -26,7 +26,7 @@ export default function WebIndex({ data }) {
                   currently working as an Automation Test Engineer at Funcom for
                   the open-world survival MMO{" "}
                   <a
-                    href="https://dunegames.com/"
+                    href="https://duneawakening.com/"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -54,7 +54,7 @@ export default function WebIndex({ data }) {
           <h2 className="main-header">
             <span>Stay in touch</span>
           </h2>
-          <p>I promise, no spamming.</p>
+          <p>No spamming, I promise.</p>
           <a
             className="button"
             href="http://eepurl.com/icQEh5"

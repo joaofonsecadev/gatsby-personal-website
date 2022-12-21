@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tsx",
+    "path": "/tags/git",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"id":"e1eebaa7-8ad5-5f25-a2e8-256fb5693590","frontmatter":{"date":"December 21, 2022","title":"Contributing to open-source projects on Github","tags":["open-source","git"],"slug":"/contribute-open-source-github"}}}]}},"pageContext":{"tag":"git"}},
+    "staticQueryHashes": []}

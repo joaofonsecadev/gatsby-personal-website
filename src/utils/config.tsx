@@ -1,5 +1,6 @@
 import IconTwitter from "../assets/comp-twitter";
 import IconGithub from "../assets/comp-github";
+import IconMastodon from "../assets/comp-mastodon";
 
 const siteConfig = {
   title: "João Fonseca",
@@ -18,6 +19,11 @@ const siteConfig = {
       url: "https://twitter.com/joaofonsecadev",
       icon: IconTwitter,
       label: "Twitter",
+    },
+    {
+      url: "https://fosstodon.org/@joaofonsecadev",
+      icon: IconMastodon,
+      label: "Mastodon",
     },
   ],
 };

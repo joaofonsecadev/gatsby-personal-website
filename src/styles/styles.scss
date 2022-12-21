@@ -66,6 +66,10 @@ $scrollbarHandle: $gray7;
     display: block !important;
 }
 
+.desktop-only-extra {
+    display: block !important;
+}
+
 .bright {
     color: $fontTextBright;
 }
@@ -913,6 +917,12 @@ li {
 
     .photo-element {
         width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .desktop-only-extra {
+        display: none !important;
     }
 }
 

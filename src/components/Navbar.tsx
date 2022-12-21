@@ -26,7 +26,7 @@ export default function Navbar() {
             </Link>
           ))}
         </nav>
-        <div className="toolbar-section desktop-only">
+        <div className="toolbar-section desktop-only-extra">
           <nav className="social-nav">
             {config.socials.map((item) => (
               <a

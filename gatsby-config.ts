@@ -38,6 +38,7 @@ const config: GatsbyConfig = {
             resolve: "gatsby-remark-images",
             options: {
               maxWidth: 800,
+              quality: 90,
               // linkImagesToOriginal: false,
               backgroundColor: "transparent",
             },
